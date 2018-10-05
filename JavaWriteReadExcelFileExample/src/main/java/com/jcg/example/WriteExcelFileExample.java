@@ -33,6 +33,7 @@ public class WriteExcelFileExample {
         propertyList.add(new Property());
         propertyList.add(new Property());
         propertyList.add(new Property());
+        propertyList.add(new Property());
 
         writepropertiesListToExcel(propertyList);
 
@@ -41,7 +42,8 @@ public class WriteExcelFileExample {
     public static void writepropertiesListToExcel(List<Property> propertyList){
 
         // Using XSSF for xlsx format, for xls use HSSF
-        HSSFWorkbook workbook = new HSSFWorkbook();
+        @SuppressWarnings("resource")
+		HSSFWorkbook workbook = new HSSFWorkbook();
 
         Sheet propertiesSheet = workbook.createSheet("properties");
 
